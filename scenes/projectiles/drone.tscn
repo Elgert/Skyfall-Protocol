@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b1drn3sk2x1"]
+
+[ext_resource type="Script" path="res://scripts/components/hurtbox_component.gd" id="1_hurt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_drone"]
+radius = 8.0
+
+[node name="Drone" type="Node2D"]
+
+[node name="Visual" type="Polygon2D" parent="."]
+color = Color(0.5, 0.85, 1, 1)
+polygon = PackedVector2Array(8, 0, 0, 8, -8, 0, 0, -8)
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_hurt")
+damage = 5.0
+ignore_group = "player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = SubResource("CircleShape2D_drone")

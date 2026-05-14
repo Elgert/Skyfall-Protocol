@@ -3,6 +3,9 @@ extends Resource
 ## Data-only weapon definition. Behavior lives in weapon.gd.
 ## Create .tres files in res://resources/weapons/ to define new weapons.
 
+## Stable id used to look up the weapon (for unlocks and targeted upgrades).
+@export var id: StringName = &""
+
 @export var display_name: String = "Machine Gun"
 
 ## Base time between shots (seconds). Lower = faster fire rate.
@@ -30,3 +33,7 @@ extends Resource
 
 ## Scene to spawn for each projectile.
 @export var projectile_scene: PackedScene
+
+## Drone weapons only: orbit radius (px) and orbit angular speed (rad/s).
+@export var orbit_radius: float = 80.0
+@export var orbit_speed: float = 2.5

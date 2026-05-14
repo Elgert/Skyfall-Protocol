@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func _on_level_up(_new_level: int) -> void:
 	_clear_cards()
-	var choices := UpgradeDatabase.roll_choices(3)
+	var choices := UpgradeDatabase.roll_choices(3, _get_player())
 	if choices.is_empty():
 		# Nothing to offer — just resume.
 		GameManager.resume_from_level_up()

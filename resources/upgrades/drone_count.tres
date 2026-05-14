@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://lqutkv4ful14"]
+
+[ext_resource type="Script" path="res://scripts/resources/upgrade_resource.gd" id="1_ures"]
+
+[resource]
+script = ExtResource("1_ures")
+id = &"drone_count"
+display_name = "Drones: Swarm"
+description = "+1 orbit drone"
+rarity = 1
+requires_weapon_id = &"drones"
+targets_weapon_id = &"drones"
+projectile_count_add = 1

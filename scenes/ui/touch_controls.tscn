@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b1touchsk2x1"]
+
+[ext_resource type="Script" path="res://scripts/ui/virtual_joystick.gd" id="1_joy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_base"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knob"]
+bg_color = Color(1, 1, 1, 0)
+
+[node name="TouchControls" type="CanvasLayer"]
+layer = 5
+
+[node name="Joystick" type="Control" parent="."]
+script = ExtResource("1_joy")
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 0
+
+[node name="Base" type="Panel" parent="Joystick"]
+custom_minimum_size = Vector2(240, 240)
+size = Vector2(240, 240)
+theme_override_styles/panel = SubResource("StyleBoxFlat_base")
+mouse_filter = 2
+visible = false
+
+[node name="Knob" type="Panel" parent="Joystick/Base"]
+custom_minimum_size = Vector2(100, 100)
+size = Vector2(100, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_knob")
+mouse_filter = 2

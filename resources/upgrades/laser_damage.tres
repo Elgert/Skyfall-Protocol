@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://bupg10lasdmg"]
+
+[ext_resource type="Script" path="res://scripts/resources/upgrade_resource.gd" id="1_ures"]
+
+[resource]
+script = ExtResource("1_ures")
+id = &"laser_damage"
+display_name = "Laser: Overcharge"
+description = "+30% laser damage"
+rarity = 1
+requires_weapon_id = &"laser"
+targets_weapon_id = &"laser"
+damage_mult_add = 0.30

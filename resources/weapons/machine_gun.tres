@@ -5,7 +5,9 @@
 
 [resource]
 script = ExtResource("1_wres")
-base_fire_rate = 0.22
+id = &"machine_gun"
+display_name = "Machine Gun"
+base_fire_rate = 0.75
 base_damage = 6.0
 spread_radians = 0.08
 projectile_speed = 720.0

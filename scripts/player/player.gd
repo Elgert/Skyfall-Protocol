@@ -10,8 +10,6 @@ extends CharacterBody2D
 @onready var hitbox: HitboxComponent = $HitboxComponent
 @onready var weapon_mount: Node2D = $WeaponMount
 
-var _boost_time_left: float = 0.0
-var _boost_cooldown_left: float = 0.0
 var _iframe_left: float = 0.0
 var _flicker_t: float = 0.0
 
@@ -77,8 +75,6 @@ func _get_view_rect() -> Rect2:
 
 
 func _tick_timers(delta: float) -> void:
-	_boost_time_left = max(0.0, _boost_time_left - delta)
-	_boost_cooldown_left = max(0.0, _boost_cooldown_left - delta)
 	if _iframe_left > 0.0:
 		_iframe_left = max(0.0, _iframe_left - delta)
 		if _iframe_left == 0.0:
@@ -94,17 +90,8 @@ func _apply_movement(delta: float) -> void:
 	if input.length_squared() > 1.0:
 		input = input.normalized()
 
-	# Boost trigger
-	if Input.is_action_just_pressed(&"boost") and _boost_cooldown_left == 0.0:
-		_boost_time_left = stats.boost_duration
-		_boost_cooldown_left = stats.boost_cooldown
-
-	var max_speed := stats.move_speed
-	if _boost_time_left > 0.0:
-		max_speed *= stats.boost_multiplier
-
 	if input != Vector2.ZERO:
-		velocity = velocity.move_toward(input * max_speed, stats.acceleration * delta)
+		velocity = velocity.move_toward(input * stats.move_speed, stats.acceleration * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, stats.friction * delta)
 
@@ -139,3 +126,15 @@ func _on_died() -> void:
 	EventBus.player_died.emit()
 	set_physics_process(false)
 	hide()
+
+
+## Returns the weapon node on WeaponMount with matching weapon_id, or null.
+func find_weapon(weapon_id: StringName) -> Node:
+	for child in weapon_mount.get_children():
+		if child.get(&"weapon_id") == weapon_id:
+			return child
+	return null
+
+
+func has_weapon(weapon_id: StringName) -> bool:
+	return find_weapon(weapon_id) != null

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://d011mbgbjqe3u"]
+
+[ext_resource type="Script" path="res://scripts/resources/upgrade_resource.gd" id="1_ures"]
+
+[resource]
+script = ExtResource("1_ures")
+id = &"laser_pierce"
+display_name = "Laser: Focusing Lens"
+description = "+2 laser pierce"
+rarity = 1
+requires_weapon_id = &"laser"
+targets_weapon_id = &"laser"
+pierce_add = 2

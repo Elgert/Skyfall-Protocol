@@ -26,14 +26,29 @@ func _load_all() -> void:
 		name = dir.get_next()
 
 
-func roll_choices(count: int = 3) -> Array[Resource]:
-	# Naive uniform roll; weighting by rarity comes later.
-	var pool := _all.duplicate()
+func roll_choices(count: int = 3, player: Node = null) -> Array[Resource]:
+	# Filter by eligibility (weapon-locked upgrades, already-owned unlocks).
+	var pool: Array[Resource] = []
+	for r in _all:
+		if r is UpgradeResource and _is_eligible(r, player):
+			pool.append(r)
 	pool.shuffle()
 	var out: Array[Resource] = []
 	for i in min(count, pool.size()):
 		out.append(pool[i])
 	return out
+
+
+func _is_eligible(u: UpgradeResource, player: Node) -> bool:
+	if player == null:
+		return u.requires_weapon_id == &"" and u.weapon_unlock_resource == null
+	# Skip upgrades that require an unowned weapon.
+	if u.requires_weapon_id != &"" and not player.has_weapon(u.requires_weapon_id):
+		return false
+	# Skip unlock upgrades for weapons the player already owns.
+	if u.weapon_unlock_resource != null and player.has_weapon(u.weapon_unlock_resource.id):
+		return false
+	return true
 
 
 func all_upgrades() -> Array[Resource]:

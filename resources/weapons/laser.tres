@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://b1las3rres"]
+
+[ext_resource type="Script" path="res://scripts/resources/weapon_resource.gd" id="1_wres"]
+[ext_resource type="PackedScene" uid="uid://b1las3rsk2x1" path="res://scenes/projectiles/laser_bolt.tscn" id="2_bolt"]
+
+[resource]
+script = ExtResource("1_wres")
+id = &"laser"
+display_name = "Laser"
+base_fire_rate = 0.45
+base_damage = 9.0
+projectile_count = 1
+spread_radians = 0.0
+projectile_speed = 1100.0
+projectile_lifetime = 0.9
+base_pierce = 3
+projectile_scene = ExtResource("2_bolt")

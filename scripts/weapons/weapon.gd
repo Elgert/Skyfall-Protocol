@@ -6,16 +6,36 @@ extends Node2D
 
 @export var resource: WeaponResource
 
+var weapon_id: StringName = &""
+
 var _cooldown: float = 0.0
 var _player: Player
 
 
 func _ready() -> void:
+	# Duplicate the resource so per-weapon upgrades don't mutate the shared .tres.
+	if resource != null:
+		resource = resource.duplicate(true) as WeaponResource
+		weapon_id = resource.id
 	# Walk up to find the Player (we're a child of Player/WeaponMount).
 	var n: Node = self
 	while n != null and not (n is Player):
 		n = n.get_parent()
 	_player = n as Player
+
+
+## Called by UpgradeResource when this weapon is targeted by an upgrade.
+func apply_upgrade(u: UpgradeResource) -> void:
+	if resource == null:
+		return
+	if u.damage_mult_add != 0.0:
+		resource.base_damage *= 1.0 + u.damage_mult_add
+	if u.fire_rate_mult_add != 0.0:
+		resource.base_fire_rate /= 1.0 + u.fire_rate_mult_add
+	if u.projectile_speed_mult_add != 0.0:
+		resource.projectile_speed *= 1.0 + u.projectile_speed_mult_add
+	resource.projectile_count += u.projectile_count_add
+	resource.base_pierce += u.pierce_add
 
 
 func _process(delta: float) -> void:

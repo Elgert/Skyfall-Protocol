@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://b1drnres"]
+
+[ext_resource type="Script" path="res://scripts/resources/weapon_resource.gd" id="1_wres"]
+
+[resource]
+script = ExtResource("1_wres")
+id = &"drones"
+display_name = "Orbit Drones"
+base_fire_rate = 0.0
+base_damage = 6.0
+projectile_count = 2
+spread_radians = 0.0
+projectile_speed = 0.0
+projectile_lifetime = 0.0
+base_pierce = 0
+orbit_radius = 90.0
+orbit_speed = 3.0

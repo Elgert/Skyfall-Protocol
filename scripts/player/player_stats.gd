@@ -13,11 +13,6 @@ extends Resource
 @export var friction: float = 900.0
 @export var rotation_speed: float = 8.0  # radians/sec toward aim target
 
-# --- Boost / dash ---
-@export var boost_multiplier: float = 2.4
-@export var boost_duration: float = 0.25
-@export var boost_cooldown: float = 1.2
-
 # --- Pickups ---
 @export var pickup_radius: float = 70.0
 
