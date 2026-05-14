@@ -31,12 +31,13 @@ func _process(delta: float) -> void:
 
 
 func _fire(stats: PlayerStats) -> void:
-	# Need a target to fire. (Could fire forward instead — design call: auto-aim only.)
+	# Gate: only fire when a visible enemy exists. Direction: plane's forward,
+	# not the target's position — bullets shoot out the nose, even while
+	# the plane is mid-rotation toward a new target.
 	if not _player.has_aim_target():
 		return
 
-	var aim_pos := _player.get_aim_position()
-	var base_dir := (aim_pos - global_position).normalized()
+	var base_dir: Vector2 = global_transform.x.normalized()
 	var count := resource.projectile_count + stats.projectile_count_bonus
 	var damage := resource.base_damage * stats.damage_mult
 	var speed := resource.projectile_speed * stats.projectile_speed_mult
