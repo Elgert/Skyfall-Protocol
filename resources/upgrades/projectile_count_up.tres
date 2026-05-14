@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://bupg5multi"]
+
+[ext_resource type="Script" path="res://scripts/resources/upgrade_resource.gd" id="1_ures"]
+
+[resource]
+script = ExtResource("1_ures")
+id = &"projectile_count_up"
+display_name = "Twin Cannons"
+description = "+1 projectile per shot"
+rarity = 1
+projectile_count_add = 1

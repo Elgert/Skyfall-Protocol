@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyResource" format=3 uid="uid://benres3boss"]
+
+[ext_resource type="Script" path="res://scripts/resources/enemy_resource.gd" id="1_eres"]
+
+[resource]
+script = ExtResource("1_eres")
+display_name = "Hunter"
+max_hp = 600.0
+speed = 75.0
+contact_damage = 28.0
+xp_value = 30
+tint = Color(0.85, 0.15, 0.85, 1)
+visual_scale = 2.4
+is_boss = true

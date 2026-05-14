@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyResource" format=3 uid="uid://benres1drone"]
+
+[ext_resource type="Script" path="res://scripts/resources/enemy_resource.gd" id="1_eres"]
+
+[resource]
+script = ExtResource("1_eres")
+display_name = "Basic Drone"
+max_hp = 12.0
+speed = 110.0
+contact_damage = 8.0
+xp_value = 1

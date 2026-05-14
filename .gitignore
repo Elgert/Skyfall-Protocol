@@ -1,0 +1,10 @@
+# Godot 4+ generated
+.godot/
+
+# Import cache (optional; some teams commit .import)
+# .import/
+
+# OS / editor
+.DS_Store
+*.swp
+*.tmp

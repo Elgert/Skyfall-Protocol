@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://bweap0nmgun"]
+
+[ext_resource type="Script" uid="uid://b0up6rucqxrwt" path="res://scripts/resources/weapon_resource.gd" id="1_wres"]
+[ext_resource type="PackedScene" path="res://scenes/projectiles/bullet.tscn" id="2_bullet"]
+
+[resource]
+script = ExtResource("1_wres")
+base_fire_rate = 0.22
+base_damage = 6.0
+spread_radians = 0.08
+projectile_speed = 720.0
+projectile_lifetime = 1.1
+projectile_scene = ExtResource("2_bullet")

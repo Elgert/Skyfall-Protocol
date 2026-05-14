@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://bupg2firerate"]
+
+[ext_resource type="Script" path="res://scripts/resources/upgrade_resource.gd" id="1_ures"]
+
+[resource]
+script = ExtResource("1_ures")
+id = &"fire_rate_up"
+display_name = "Hot Barrel"
+description = "+20% fire rate"
+rarity = 0
+fire_rate_mult_add = 0.20

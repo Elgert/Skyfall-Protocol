@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://bupg1damage"]
+
+[ext_resource type="Script" path="res://scripts/resources/upgrade_resource.gd" id="1_ures"]
+
+[resource]
+script = ExtResource("1_ures")
+id = &"damage_up"
+display_name = "Heavier Rounds"
+description = "+25% damage"
+rarity = 0
+damage_mult_add = 0.25

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b1bull3tsk2x1"]
+
+[ext_resource type="Script" path="res://scripts/projectiles/projectile.gd" id="1_proj"]
+[ext_resource type="Script" path="res://scripts/components/hurtbox_component.gd" id="2_hurt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bullet"]
+size = Vector2(14, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hurt"]
+size = Vector2(14, 4)
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_proj")
+
+[node name="Visual" type="Polygon2D" parent="."]
+color = Color(1, 0.92, 0.4, 1)
+polygon = PackedVector2Array(7, 0, -7, -2, -7, 2)
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_hurt")
+damage = 5.0
+ignore_group = "player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = SubResource("RectangleShape2D_hurt")

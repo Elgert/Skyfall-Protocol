@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cgs5l2yjos08v"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="0_main"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/enemy_basic.tscn" id="2_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/basic_drone.tres" id="3_drone"]
+[ext_resource type="Resource" path="res://resources/enemies/elite_drone.tres" id="3b_elite"]
+[ext_resource type="Resource" path="res://resources/enemies/boss_alpha.tres" id="3c_boss"]
+[ext_resource type="Script" path="res://scripts/systems/pickup_spawner.gd" id="4_spawner"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="5_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/level_up_menu.tscn" id="6_lvlup"]
+[ext_resource type="Script" path="res://scripts/systems/wave_director.gd" id="7_wave"]
+[ext_resource type="PackedScene" path="res://scenes/ui/game_over_menu.tscn" id="8_go"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("0_main")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Background" type="ColorRect" parent="World"]
+offset_left = -2000.0
+offset_top = -2000.0
+offset_right = 2000.0
+offset_bottom = 2000.0
+mouse_filter = 2
+color = Color(0.07, 0.08, 0.12, 1)
+
+[node name="Player" parent="World" instance=ExtResource("1_player")]
+
+[node name="Enemies" type="Node2D" parent="World" groups=["enemy_container"]]
+
+[node name="Projectiles" type="Node2D" parent="World" groups=["projectile_container"]]
+
+[node name="Pickups" type="Node2D" parent="World" groups=["pickup_container"]]
+
+[node name="PickupSpawner" type="Node" parent="."]
+script = ExtResource("4_spawner")
+
+[node name="WaveDirector" type="Node" parent="."]
+script = ExtResource("7_wave")
+enemy_scene = ExtResource("2_enemy")
+basic_resource = ExtResource("3_drone")
+elite_resource = ExtResource("3b_elite")
+boss_resource = ExtResource("3c_boss")
+
+[node name="HUD" parent="." instance=ExtResource("5_hud")]
+
+[node name="LevelUpMenu" parent="." instance=ExtResource("6_lvlup")]
+
+[node name="GameOverMenu" parent="." instance=ExtResource("8_go")]

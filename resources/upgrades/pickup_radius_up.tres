@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://bupg7magnet"]
+
+[ext_resource type="Script" path="res://scripts/resources/upgrade_resource.gd" id="1_ures"]
+
+[resource]
+script = ExtResource("1_ures")
+id = &"pickup_radius_up"
+display_name = "Magnetic Field"
+description = "+40 pickup radius"
+rarity = 0
+pickup_radius_add = 40.0
