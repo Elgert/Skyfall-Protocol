@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/components/health_component.gd" id="2_health"]
 [ext_resource type="Script" path="res://scripts/components/hitbox_component.gd" id="3_hitbox"]
 [ext_resource type="Script" path="res://scripts/weapons/weapon.gd" id="4_weapon"]
-[ext_resource type="Resource" path="res://resources/weapons/machine_gun.tres" id="5_mgun"]
+[ext_resource type="Resource" path="res://resources/weapons/hurled_daggers.tres" id="5_mgun"]
 [ext_resource type="Script" path="res://scripts/components/camera_shake.gd" id="6_shake"]
 [ext_resource type="Texture2D" path="res://art/player/player.png" id="7_plane"]
 

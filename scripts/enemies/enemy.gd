@@ -14,6 +14,7 @@ extends CharacterBody2D
 var _player: Node2D = null
 var _base_color: Color = Color.WHITE
 var _flash_timer: float = 0.0
+var _shoot_timer: float = 0.0
 
 
 func _ready() -> void:
@@ -40,6 +41,7 @@ func _physics_process(delta: float) -> void:
 		_find_player()
 		velocity = Vector2.ZERO
 		return
+	_tick_shoot(delta)
 	var to_player := _player.global_position - global_position
 	if to_player.length_squared() < 1.0:
 		return
@@ -62,6 +64,33 @@ func _on_player_spawned(p: Node) -> void:
 
 func _on_damaged(_amount: float, _current: float, _max_hp: float) -> void:
 	_flash_timer = 0.08
+
+
+func _tick_shoot(delta: float) -> void:
+	if resource == null or not resource.shoots or resource.bullet_scene == null:
+		return
+	_shoot_timer = max(0.0, _shoot_timer - delta)
+	if _shoot_timer > 0.0:
+		return
+	if global_position.distance_squared_to(_player.global_position) > resource.attack_range * resource.attack_range:
+		return
+	_fire_at_player()
+	_shoot_timer = resource.shoot_interval
+
+
+func _fire_at_player() -> void:
+	var bullet: Projectile = resource.bullet_scene.instantiate()
+	var dir := (_player.global_position - global_position).normalized()
+	_get_projectile_container().add_child(bullet)
+	bullet.global_position = global_position
+	bullet.setup(dir, resource.bullet_speed, resource.bullet_damage, 2.5, 1)
+
+
+func _get_projectile_container() -> Node:
+	var groups := get_tree().get_nodes_in_group(&"projectile_container")
+	if not groups.is_empty():
+		return groups[0]
+	return get_tree().current_scene
 
 
 func _tick_flash(delta: float) -> void:

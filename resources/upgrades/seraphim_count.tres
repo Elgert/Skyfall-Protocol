@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_ures")
 id = &"drone_count"
-display_name = "Drones: Swarm"
-description = "+1 orbit drone"
+display_name = "Seraphim: Choir"
+description = "+1 Seraphic Blade."
 rarity = 1
-requires_weapon_id = &"drones"
-targets_weapon_id = &"drones"
+requires_weapon_id = &"seraphic_blades"
+targets_weapon_id = &"seraphic_blades"
 projectile_count_add = 1

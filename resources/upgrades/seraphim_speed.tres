@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_ures")
 id = &"drone_speed"
-display_name = "Drones: Spin Up"
-description = "+40% drone orbit speed"
+display_name = "Seraphim: Whirlwind"
+description = "+40% Seraphic Blade orbit speed."
 rarity = 0
-requires_weapon_id = &"drones"
-targets_weapon_id = &"drones"
+requires_weapon_id = &"seraphic_blades"
+targets_weapon_id = &"seraphic_blades"
 projectile_speed_mult_add = 0.40

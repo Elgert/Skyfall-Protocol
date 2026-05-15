@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_ures")
 id = &"laser_pierce"
-display_name = "Laser: Focusing Lens"
-description = "+2 laser pierce"
+display_name = "Lance: Piercing Light"
+description = "+2 Holy Lance pierce."
 rarity = 1
-requires_weapon_id = &"laser"
-targets_weapon_id = &"laser"
+requires_weapon_id = &"holy_lance"
+targets_weapon_id = &"holy_lance"
 pierce_add = 2

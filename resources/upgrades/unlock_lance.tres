@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/resources/upgrade_resource.gd" id="1_ures"]
 [ext_resource type="PackedScene" uid="uid://b1weaponsk2x1" path="res://scenes/weapons/weapon.tscn" id="2_scene"]
-[ext_resource type="Resource" uid="uid://b1las3rres" path="res://resources/weapons/laser.tres" id="3_res"]
+[ext_resource type="Resource" uid="uid://b1las3rres" path="res://resources/weapons/holy_lance.tres" id="3_res"]
 
 [resource]
 script = ExtResource("1_ures")
 id = &"unlock_laser"
-display_name = "EQUIP: Laser"
-description = "Mount a piercing laser cannon."
+display_name = "EQUIP: Holy Lance"
+description = "Channel a piercing beam of divine light."
 rarity = 2
 weapon_unlock_scene = ExtResource("2_scene")
 weapon_unlock_resource = ExtResource("3_res")

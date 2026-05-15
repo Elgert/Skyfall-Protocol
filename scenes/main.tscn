@@ -3,9 +3,10 @@
 [ext_resource type="Script" path="res://scripts/main.gd" id="0_main"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/enemy_basic.tscn" id="2_enemy"]
-[ext_resource type="Resource" path="res://resources/enemies/basic_drone.tres" id="3_drone"]
-[ext_resource type="Resource" path="res://resources/enemies/elite_drone.tres" id="3b_elite"]
-[ext_resource type="Resource" path="res://resources/enemies/boss_alpha.tres" id="3c_boss"]
+[ext_resource type="Resource" path="res://resources/enemies/skeleton_grunt.tres" id="3_drone"]
+[ext_resource type="Resource" path="res://resources/enemies/skeleton_champion.tres" id="3b_elite"]
+[ext_resource type="Resource" path="res://resources/enemies/demon_lord.tres" id="3c_boss"]
+[ext_resource type="Resource" path="res://resources/enemies/skeletal_archer.tres" id="3d_turret"]
 [ext_resource type="Script" path="res://scripts/systems/pickup_spawner.gd" id="4_spawner"]
 [ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="5_hud"]
 [ext_resource type="PackedScene" path="res://scenes/ui/level_up_menu.tscn" id="6_lvlup"]
@@ -43,6 +44,7 @@ enemy_scene = ExtResource("2_enemy")
 basic_resource = ExtResource("3_drone")
 elite_resource = ExtResource("3b_elite")
 boss_resource = ExtResource("3c_boss")
+shooter_resource = ExtResource("3d_turret")
 
 [node name="HUD" parent="." instance=ExtResource("5_hud")]
 

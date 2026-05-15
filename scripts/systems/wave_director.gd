@@ -12,6 +12,9 @@ extends Node
 @export var basic_resource: EnemyResource
 @export var elite_resource: EnemyResource
 @export var boss_resource: EnemyResource
+@export var shooter_resource: EnemyResource
+@export var shooter_start_time: float = 30.0
+@export var shooter_interval: float = 8.0
 
 # Basic spawn cadence
 @export var spawn_radius: float = 700.0
@@ -36,6 +39,7 @@ var _alive_count: int = 0
 
 var _next_elite_time: float = 0.0
 var _next_boss_time: float = 0.0
+var _next_shooter_time: float = 0.0
 var _boss_spawn_index: int = 0  ## 0-indexed count of boss spawn events
 
 
@@ -54,6 +58,7 @@ func _on_run_started() -> void:
 	_alive_count = 0
 	_next_elite_time = _current_elite_interval()
 	_next_boss_time = boss_interval
+	_next_shooter_time = shooter_start_time
 	_boss_spawn_index = 0
 
 
@@ -73,6 +78,11 @@ func _process(delta: float) -> void:
 	if elite_resource != null and GameManager.elapsed >= _next_elite_time:
 		_spawn_resource(elite_resource)
 		_next_elite_time += _current_elite_interval()
+
+	# Shooter tick — independent timer.
+	if shooter_resource != null and GameManager.elapsed >= _next_shooter_time:
+		_spawn_resource(shooter_resource)
+		_next_shooter_time += shooter_interval
 
 	# Basic ramp.
 	var interval := _current_interval()

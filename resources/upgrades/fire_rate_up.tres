@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ures")
 id = &"fire_rate_up"
-display_name = "Hot Barrel"
-description = "+20% fire rate"
+display_name = "Zealous Fervor"
+description = "Attack faster in the heat of battle. +20% attack rate."
 rarity = 0
 fire_rate_mult_add = 0.20

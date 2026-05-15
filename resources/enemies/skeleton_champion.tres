@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_eres")
-display_name = "Elite Drone"
+display_name = "Skeleton Champion"
 max_hp = 45.0
 speed = 95.0
 contact_damage = 14.0

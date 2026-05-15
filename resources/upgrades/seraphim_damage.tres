@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_ures")
 id = &"drone_damage"
-display_name = "Drones: Plasma Edge"
-description = "+35% drone damage"
+display_name = "Seraphim: Sharpened Wings"
+description = "+35% Seraphic Blade damage."
 rarity = 1
-requires_weapon_id = &"drones"
-targets_weapon_id = &"drones"
+requires_weapon_id = &"seraphic_blades"
+targets_weapon_id = &"seraphic_blades"
 damage_mult_add = 0.35

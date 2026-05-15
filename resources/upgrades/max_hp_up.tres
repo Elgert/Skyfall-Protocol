@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ures")
 id = &"max_hp_up"
-display_name = "Reinforced Hull"
-description = "+25 max HP and heal"
+display_name = "Holy Vigor"
+description = "+25 max HP and heal."
 rarity = 0
 max_hp_add = 25.0

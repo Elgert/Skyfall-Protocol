@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://bweap0nmgun"]
 
 [ext_resource type="Script" uid="uid://b0up6rucqxrwt" path="res://scripts/resources/weapon_resource.gd" id="1_wres"]
-[ext_resource type="PackedScene" path="res://scenes/projectiles/bullet.tscn" id="2_bullet"]
+[ext_resource type="PackedScene" path="res://scenes/projectiles/dagger.tscn" id="2_bullet"]
 
 [resource]
 script = ExtResource("1_wres")
-id = &"machine_gun"
-display_name = "Machine Gun"
+id = &"hurled_daggers"
+display_name = "Hurled Daggers"
 base_fire_rate = 0.75
 base_damage = 6.0
 spread_radians = 0.08

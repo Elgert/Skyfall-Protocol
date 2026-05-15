@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/resources/upgrade_resource.gd" id="1_ures"]
 [ext_resource type="PackedScene" uid="uid://b1drwpnsk2x1" path="res://scenes/weapons/weapon_drones.tscn" id="2_scene"]
-[ext_resource type="Resource" uid="uid://b1drnres" path="res://resources/weapons/drones.tres" id="3_res"]
+[ext_resource type="Resource" uid="uid://b1drnres" path="res://resources/weapons/seraphic_blades.tres" id="3_res"]
 
 [resource]
 script = ExtResource("1_ures")
 id = &"unlock_drones"
-display_name = "EQUIP: Orbit Drones"
-description = "Two drones orbit your plane and slice through enemies."
+display_name = "EQUIP: Seraphic Blades"
+description = "Two angelic swords orbit you and cleave through enemies."
 rarity = 2
 weapon_unlock_scene = ExtResource("2_scene")
 weapon_unlock_resource = ExtResource("3_res")

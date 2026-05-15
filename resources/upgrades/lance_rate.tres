@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_ures")
 id = &"laser_rate"
-display_name = "Laser: Rapid Optics"
-description = "+30% laser fire rate"
+display_name = "Lance: Swift Judgement"
+description = "+30% Holy Lance attack rate."
 rarity = 1
-requires_weapon_id = &"laser"
-targets_weapon_id = &"laser"
+requires_weapon_id = &"holy_lance"
+targets_weapon_id = &"holy_lance"
 fire_rate_mult_add = 0.30

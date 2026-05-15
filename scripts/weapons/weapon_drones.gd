@@ -3,7 +3,7 @@ extends Node2D
 ## Orbiting drones around the player. Each drone has a hurtbox that damages
 ## enemies on contact. Count / radius / speed / damage live on the WeaponResource.
 
-const DRONE_SCENE: PackedScene = preload("res://scenes/projectiles/drone.tscn")
+const DRONE_SCENE: PackedScene = preload("res://scenes/projectiles/seraphic_blade.tscn")
 
 @export var resource: WeaponResource
 

@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_wres")
-id = &"drones"
-display_name = "Orbit Drones"
+id = &"seraphic_blades"
+display_name = "Seraphic Blades"
 base_fire_rate = 0.0
 base_damage = 6.0
 projectile_count = 2

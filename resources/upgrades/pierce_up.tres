@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ures")
 id = &"pierce_up"
-display_name = "AP Rounds"
-description = "+1 pierce (bullets hit twice)"
+display_name = "Blessed Edge"
+description = "Your blades pierce one extra enemy."
 rarity = 1
 pierce_add = 1

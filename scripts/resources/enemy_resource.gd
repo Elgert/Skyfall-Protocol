@@ -14,3 +14,12 @@ extends Resource
 
 ## Marks this enemy as a boss — bigger XP, used by WaveDirector for spawning rules.
 @export var is_boss: bool = false
+
+# --- Ranged attack ---
+## When true, the enemy fires bullets periodically at the player.
+@export var shoots: bool = false
+@export var bullet_scene: PackedScene
+@export var bullet_damage: float = 6.0
+@export var bullet_speed: float = 280.0
+@export var shoot_interval: float = 2.0
+@export var attack_range: float = 500.0

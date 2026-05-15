@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ures")
 id = &"projectile_count_up"
-display_name = "Twin Cannons"
-description = "+1 projectile per shot"
+display_name = "Twin Strike"
+description = "+1 projectile per attack."
 rarity = 1
 projectile_count_add = 1

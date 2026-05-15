@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ures")
 id = &"move_speed_up"
-display_name = "Tuned Engine"
-description = "+30 move speed"
+display_name = "Crusader's Stride"
+description = "Faster on the field. +30 movement speed."
 rarity = 0
 move_speed_add = 30.0

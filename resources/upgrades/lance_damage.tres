@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_ures")
 id = &"laser_damage"
-display_name = "Laser: Overcharge"
-description = "+30% laser damage"
+display_name = "Lance: Divine Wrath"
+description = "+30% Holy Lance damage."
 rarity = 1
-requires_weapon_id = &"laser"
-targets_weapon_id = &"laser"
+requires_weapon_id = &"holy_lance"
+targets_weapon_id = &"holy_lance"
 damage_mult_add = 0.30

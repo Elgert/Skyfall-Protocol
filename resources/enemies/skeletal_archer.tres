@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyResource" format=3 uid="uid://benres4turret"]
+
+[ext_resource type="Script" path="res://scripts/resources/enemy_resource.gd" id="1_eres"]
+[ext_resource type="PackedScene" uid="uid://b1enbsk2x1" path="res://scenes/projectiles/bone_arrow.tscn" id="2_eb"]
+
+[resource]
+script = ExtResource("1_eres")
+display_name = "Skeletal Archer"
+max_hp = 22.0
+speed = 45.0
+contact_damage = 5.0
+xp_value = 2
+tint = Color(0.95, 0.85, 0.25, 1)
+visual_scale = 1.0
+is_boss = false
+shoots = true
+bullet_scene = ExtResource("2_eb")
+bullet_damage = 7.0
+bullet_speed = 290.0
+shoot_interval = 2.0
+attack_range = 520.0
